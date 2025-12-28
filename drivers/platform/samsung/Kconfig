@@ -75,8 +75,8 @@ menu "Samsung board selection"
 		help
 		  Support for Galaxy Tab S9 Ultra
 
-	config SEC_PLATFORM_GTS9WIFI
-		bool "Samsung gts9wifi board"
+	config SEC_PLATFORM_GTS9uWIFI
+		bool "Samsung gts9uwifi board"
 		select SEC_PLATFORM_SM8550
 		help
 		  Support for Galaxy Tab S9 WLAN

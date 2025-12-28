@@ -234,7 +234,7 @@ endif
 obj-y				+= input/sec_input/stm_spi/
 obj-y				+= mfd/slsi/s2mpb02/
 
-ifeq ($(CONFIG_SEC_PLATFORM_GTS9WIFI), y)
+ifeq ($(CONFIG_SEC_PLATFORM_GTS9uWIFI), y)
 obj-y += vibrator/common/
 obj-y += sec_panel_notifier_v2/
 obj-y += battery/charger/sm5440_charger/
