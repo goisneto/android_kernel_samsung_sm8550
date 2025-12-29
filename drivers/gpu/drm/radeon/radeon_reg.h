@@ -981,7 +981,7 @@
 #       define RADEON_VERT_STRETCH_BLEND       (1     << 26)
 #       define RADEON_VERT_AUTO_RATIO_EN       (1     << 27)
 #	define RADEON_VERT_AUTO_RATIO_INC      (1     << 31)
-#       define RADEON_VERT_STRETCH_RESERVED    0x71000000
+#       define RADEON_VERT_STRETCH_RESERVED    0x91000000
 #define RS400_FP_2ND_GEN_CNTL               0x0384
 #       define RS400_FP_2ND_ON              (1 << 0)
 #       define RS400_FP_2ND_BLANK_EN        (1 << 1)

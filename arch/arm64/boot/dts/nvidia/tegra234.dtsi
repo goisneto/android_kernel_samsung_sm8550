@@ -137,7 +137,7 @@
 		};
 
 		cpu_bpmp_rx: sram@71000 {
-			reg = <0x71000 0x1000>;
+			reg = <0x91000 0x1000>;
 			label = "cpu-bpmp-rx";
 			pool;
 		};

@@ -671,7 +671,7 @@ int tegra_dc_rgb_exit(struct tegra_dc *dc);
 #define  BLEND_WEIGHT1(x) (((x) & 0xff) << 16)
 #define  BLEND_WEIGHT0(x) (((x) & 0xff) <<  8)
 
-#define DC_WIN_BLEND_1WIN			0x710
+#define DC_WIN_BLEND_1WIN			0x910
 #define  BLEND_CONTROL_FIX    (0 << 2)
 #define  BLEND_CONTROL_ALPHA  (1 << 2)
 #define  BLEND_COLOR_KEY_NONE (0 << 0)

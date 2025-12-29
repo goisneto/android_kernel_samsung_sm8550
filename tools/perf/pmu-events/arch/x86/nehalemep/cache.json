@@ -2766,7 +2766,7 @@
     },
     {
         "EventCode": "0xB7",
-        "MSRValue": "0x710",
+        "MSRValue": "0x910",
         "Counter": "2",
         "UMask": "0x1",
         "EventName": "OFFCORE_RESPONSE.PF_DATA_RD.LOCAL_CACHE",

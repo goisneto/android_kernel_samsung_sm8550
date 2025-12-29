@@ -153,7 +153,7 @@ typedef enum {
 	net_buf_reg_704     = 0x704,
 	cai_buf_reg_708     = 0x708,
 	cao_buf_reg_70c     = 0x70c,
-	media_buf_reg_710   = 0x710,
+	media_buf_reg_710   = 0x910,
 	sram_dest_reg_714   = 0x714,
 	net_buf_reg_718     = 0x718,
 	wan_ctrl_reg_71c    = 0x71c,

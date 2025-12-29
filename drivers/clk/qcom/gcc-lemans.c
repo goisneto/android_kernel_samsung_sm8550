@@ -884,7 +884,7 @@ static struct clk_rcg2 gcc_gp1_clk_src = {
 };
 
 static struct clk_rcg2 gcc_gp2_clk_src = {
-	.cmd_rcgr = 0x71004,
+	.cmd_rcgr = 0x91004,
 	.mnd_width = 16,
 	.hid_width = 5,
 	.parent_map = gcc_parent_map_2,
@@ -2767,10 +2767,10 @@ static struct clk_branch gcc_gp1_clk = {
 };
 
 static struct clk_branch gcc_gp2_clk = {
-	.halt_reg = 0x71000,
+	.halt_reg = 0x91000,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71000,
+		.enable_reg = 0x91000,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_gp2_clk",

@@ -7,7 +7,7 @@
 /* Interrupt Throttling and Rate Limiting Goodies */
 #define IAVF_DEFAULT_IRQ_WORK      256
 
-/* The datasheet for the X710 and XL710 indicate that the maximum value for
+/* The datasheet for the X910 and XL710 indicate that the maximum value for
  * the ITR is 8160usec which is then called out as 0xFF0 with a 2usec
  * resolution. 8160 is 0x1FE0 when written out in hex. So instead of storing
  * the register value which is divided by 2 lets use the actual values and

@@ -56,7 +56,7 @@
 #define CLK_CPU_SSP1		0x628
 #define CLK_CPU_QEI		0x630
 #define CLK_PERIPH_BUS		0x700
-#define CLK_PERIPH_CORE		0x710
+#define CLK_PERIPH_CORE		0x910
 #define CLK_PERIPH_SGPIO	0x718
 #define CLK_USB0		0x800
 #define CLK_USB1		0x900

@@ -339,7 +339,7 @@ int wm5100_detect(struct snd_soc_component *component, struct snd_soc_jack *jack
 #define WM5100_AIF1TX2MIX_INPUT_3_VOLUME        0x70D
 #define WM5100_AIF1TX2MIX_INPUT_4_SOURCE        0x70E
 #define WM5100_AIF1TX2MIX_INPUT_4_VOLUME        0x70F
-#define WM5100_AIF1TX3MIX_INPUT_1_SOURCE        0x710
+#define WM5100_AIF1TX3MIX_INPUT_1_SOURCE        0x910
 #define WM5100_AIF1TX3MIX_INPUT_1_VOLUME        0x711
 #define WM5100_AIF1TX3MIX_INPUT_2_SOURCE        0x712
 #define WM5100_AIF1TX3MIX_INPUT_2_VOLUME        0x713

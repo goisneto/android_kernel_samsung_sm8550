@@ -79,7 +79,7 @@ static const struct pci_device_id i40e_pci_tbl[] = {
 	{PCI_VDEVICE(INTEL, I40E_DEV_ID_SFP_I_X722), 0},
 	{PCI_VDEVICE(INTEL, I40E_DEV_ID_20G_KR2), 0},
 	{PCI_VDEVICE(INTEL, I40E_DEV_ID_20G_KR2_A), 0},
-	{PCI_VDEVICE(INTEL, I40E_DEV_ID_X710_N3000), 0},
+	{PCI_VDEVICE(INTEL, I40E_DEV_ID_X910_N3000), 0},
 	{PCI_VDEVICE(INTEL, I40E_DEV_ID_XXV710_N3000), 0},
 	{PCI_VDEVICE(INTEL, I40E_DEV_ID_25G_B), 0},
 	{PCI_VDEVICE(INTEL, I40E_DEV_ID_25G_SFP28), 0},
@@ -9404,8 +9404,8 @@ static int i40e_handle_lldp_event(struct i40e_pf *pf,
 	int ret = 0;
 	u8 type;
 
-	/* X710-T*L 2.5G and 5G speeds don't support DCB */
-	if (I40E_IS_X710TL_DEVICE(hw->device_id) &&
+	/* X910-T*L 2.5G and 5G speeds don't support DCB */
+	if (I40E_IS_X910TL_DEVICE(hw->device_id) &&
 	    (hw->phy.link_info.link_speed &
 	     ~(I40E_LINK_SPEED_2_5GB | I40E_LINK_SPEED_5GB)) &&
 	     !(pf->flags & I40E_FLAG_DCB_CAPABLE))
@@ -9443,12 +9443,12 @@ static int i40e_handle_lldp_event(struct i40e_pf *pf,
 	/* Get updated DCBX data from firmware */
 	ret = i40e_get_dcb_config(&pf->hw);
 	if (ret) {
-		/* X710-T*L 2.5G and 5G speeds don't support DCB */
-		if (I40E_IS_X710TL_DEVICE(hw->device_id) &&
+		/* X910-T*L 2.5G and 5G speeds don't support DCB */
+		if (I40E_IS_X910TL_DEVICE(hw->device_id) &&
 		    (hw->phy.link_info.link_speed &
 		     (I40E_LINK_SPEED_2_5GB | I40E_LINK_SPEED_5GB))) {
 			dev_warn(&pf->pdev->dev,
-				 "DCB is not supported for X710-T*L 2.5/5G speeds\n");
+				 "DCB is not supported for X910-T*L 2.5/5G speeds\n");
 			pf->flags &= ~I40E_FLAG_DCB_CAPABLE;
 		} else {
 			dev_info(&pf->pdev->dev,
@@ -10929,12 +10929,12 @@ static void i40e_rebuild(struct i40e_pf *pf, bool reinit, bool lock_acquired)
 	if (i40e_is_tc_mqprio_enabled(pf)) {
 		i40e_aq_set_dcb_parameters(hw, false, NULL);
 	} else {
-		if (I40E_IS_X710TL_DEVICE(hw->device_id) &&
+		if (I40E_IS_X910TL_DEVICE(hw->device_id) &&
 		    (hw->phy.link_info.link_speed &
 		     (I40E_LINK_SPEED_2_5GB | I40E_LINK_SPEED_5GB))) {
 			i40e_aq_set_dcb_parameters(hw, false, NULL);
 			dev_warn(&pf->pdev->dev,
-				 "DCB is not supported for X710-T*L 2.5/5G speeds\n");
+				 "DCB is not supported for X910-T*L 2.5/5G speeds\n");
 			pf->flags &= ~I40E_FLAG_DCB_CAPABLE;
 		} else {
 			i40e_aq_set_dcb_parameters(hw, true, NULL);

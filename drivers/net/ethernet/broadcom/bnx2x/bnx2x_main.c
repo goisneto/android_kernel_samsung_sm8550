@@ -6952,7 +6952,7 @@ static void bnx2x_setup_fan_failure_detection(struct bnx2x *bp)
 	/*
 	 * The fan failure mechanism is usually related to the PHY type since
 	 * the power consumption of the board is affected by the PHY. Currently,
-	 * fan is required for most designs with SFX7101, BCM8727 and BCM8481.
+	 * fan is required for most designs with SFX9101, BCM8727 and BCM8481.
 	 */
 	else if (val == SHARED_HW_CFG_FAN_FAILURE_PHY_TYPE)
 		for (port = PORT_0; port < PORT_MAX; port++) {

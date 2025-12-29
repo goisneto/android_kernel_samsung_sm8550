@@ -20,7 +20,7 @@
 				 MDIO_DEVS_PHYXS	| \
 				 MDIO_DEVS_AN)
 
-#define SFX7101_LOOPBACKS ((1 << LOOPBACK_PHYXS) |	\
+#define SFX9101_LOOPBACKS ((1 << LOOPBACK_PHYXS) |	\
 			   (1 << LOOPBACK_PCS) |	\
 			   (1 << LOOPBACK_PMAPMD) |	\
 			   (1 << LOOPBACK_PHYXS_WS))
@@ -70,7 +70,7 @@
 #define PMA_PMD_LED_MASK	3
 /* All LEDs under hardware control */
 /* Green and Amber under hardware control, Red off */
-#define SFX7101_PMA_PMD_LED_DEFAULT (PMA_PMD_LED_OFF << PMA_PMD_LED_RX_LBN)
+#define SFX9101_PMA_PMD_LED_DEFAULT (PMA_PMD_LED_OFF << PMA_PMD_LED_RX_LBN)
 
 #define PMA_PMD_SPEED_ENABLE_REG 49192
 #define PMA_PMD_100TX_ADV_LBN    1
@@ -155,7 +155,7 @@ static int tenxpress_init(struct ef4_nic *efx)
 	ef4_mdio_set_flag(efx, MDIO_MMD_PMAPMD, PMA_PMD_LED_CTRL_REG,
 			  1 << PMA_PMA_LED_ACTIVITY_LBN, true);
 	ef4_mdio_write(efx, MDIO_MMD_PMAPMD, PMA_PMD_LED_OVERR_REG,
-		       SFX7101_PMA_PMD_LED_DEFAULT);
+		       SFX9101_PMA_PMD_LED_DEFAULT);
 
 	return 0;
 }
@@ -174,7 +174,7 @@ static int tenxpress_phy_probe(struct ef4_nic *efx)
 	efx->mdio.mmds = TENXPRESS_REQUIRED_DEVS;
 	efx->mdio.mode_support = MDIO_SUPPORTS_C45;
 
-	efx->loopback_modes = SFX7101_LOOPBACKS | FALCON_XMAC_LOOPBACKS;
+	efx->loopback_modes = SFX9101_LOOPBACKS | FALCON_XMAC_LOOPBACKS;
 
 	efx->link_advertising = (ADVERTISED_TP | ADVERTISED_Autoneg |
 				 ADVERTISED_10000baseT_Full);
@@ -221,7 +221,7 @@ static int tenxpress_special_reset(struct ef4_nic *efx)
 {
 	int rc, reg;
 
-	/* The XGMAC clock is driven from the SFX7101 312MHz clock, so
+	/* The XGMAC clock is driven from the SFX9101 312MHz clock, so
 	 * a special software reset can glitch the XGMAC sufficiently for stats
 	 * requests to fail. */
 	falcon_stop_nic_stats(efx);
@@ -250,7 +250,7 @@ out:
 	return rc;
 }
 
-static void sfx7101_check_bad_lp(struct ef4_nic *efx, bool link_ok)
+static void sfx9101_check_bad_lp(struct ef4_nic *efx, bool link_ok)
 {
 	struct tenxpress_phy_data *pd = efx->phy_data;
 	bool bad_lp;
@@ -294,7 +294,7 @@ static void sfx7101_check_bad_lp(struct ef4_nic *efx, bool link_ok)
 	}
 }
 
-static bool sfx7101_link_ok(struct ef4_nic *efx)
+static bool sfx9101_link_ok(struct ef4_nic *efx)
 {
 	return ef4_mdio_links_ok(efx,
 				 MDIO_DEVS_PMAPMD |
@@ -353,17 +353,17 @@ static bool tenxpress_phy_poll(struct ef4_nic *efx)
 {
 	struct ef4_link_state old_state = efx->link_state;
 
-	efx->link_state.up = sfx7101_link_ok(efx);
+	efx->link_state.up = sfx9101_link_ok(efx);
 	efx->link_state.speed = 10000;
 	efx->link_state.fd = true;
 	efx->link_state.fc = ef4_mdio_get_pause(efx);
 
-	sfx7101_check_bad_lp(efx, efx->link_state.up);
+	sfx9101_check_bad_lp(efx, efx->link_state.up);
 
 	return !ef4_link_state_equal(&efx->link_state, &old_state);
 }
 
-static void sfx7101_phy_fini(struct ef4_nic *efx)
+static void sfx9101_phy_fini(struct ef4_nic *efx)
 {
 	int reg;
 
@@ -401,26 +401,26 @@ void tenxpress_set_id_led(struct ef4_nic *efx, enum ef4_led_mode mode)
 			(PMA_PMD_LED_ON << PMA_PMD_LED_LINK_LBN);
 		break;
 	default:
-		reg = SFX7101_PMA_PMD_LED_DEFAULT;
+		reg = SFX9101_PMA_PMD_LED_DEFAULT;
 		break;
 	}
 
 	ef4_mdio_write(efx, MDIO_MMD_PMAPMD, PMA_PMD_LED_OVERR_REG, reg);
 }
 
-static const char *const sfx7101_test_names[] = {
+static const char *const sfx9101_test_names[] = {
 	"bist"
 };
 
-static const char *sfx7101_test_name(struct ef4_nic *efx, unsigned int index)
+static const char *sfx9101_test_name(struct ef4_nic *efx, unsigned int index)
 {
-	if (index < ARRAY_SIZE(sfx7101_test_names))
-		return sfx7101_test_names[index];
+	if (index < ARRAY_SIZE(sfx9101_test_names))
+		return sfx9101_test_names[index];
 	return NULL;
 }
 
 static int
-sfx7101_run_tests(struct ef4_nic *efx, int *results, unsigned flags)
+sfx9101_run_tests(struct ef4_nic *efx, int *results, unsigned flags)
 {
 	int rc;
 
@@ -468,24 +468,24 @@ tenxpress_set_link_ksettings(struct ef4_nic *efx,
 	return ef4_mdio_set_link_ksettings(efx, cmd);
 }
 
-static void sfx7101_set_npage_adv(struct ef4_nic *efx, u32 advertising)
+static void sfx9101_set_npage_adv(struct ef4_nic *efx, u32 advertising)
 {
 	ef4_mdio_set_flag(efx, MDIO_MMD_AN, MDIO_AN_10GBT_CTRL,
 			  MDIO_AN_10GBT_CTRL_ADV10G,
 			  advertising & ADVERTISED_10000baseT_Full);
 }
 
-const struct ef4_phy_operations falcon_sfx7101_phy_ops = {
+const struct ef4_phy_operations falcon_sfx9101_phy_ops = {
 	.probe		  = tenxpress_phy_probe,
 	.init             = tenxpress_phy_init,
 	.reconfigure      = tenxpress_phy_reconfigure,
 	.poll             = tenxpress_phy_poll,
-	.fini             = sfx7101_phy_fini,
+	.fini             = sfx9101_phy_fini,
 	.remove		  = tenxpress_phy_remove,
 	.get_link_ksettings = tenxpress_get_link_ksettings,
 	.set_link_ksettings = tenxpress_set_link_ksettings,
-	.set_npage_adv    = sfx7101_set_npage_adv,
+	.set_npage_adv    = sfx9101_set_npage_adv,
 	.test_alive	  = ef4_mdio_test_alive,
-	.test_name	  = sfx7101_test_name,
-	.run_tests	  = sfx7101_run_tests,
+	.test_name	  = sfx9101_test_name,
+	.run_tests	  = sfx9101_run_tests,
 };

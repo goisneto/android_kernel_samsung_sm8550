@@ -617,7 +617,7 @@ static int hostap_cs_resume(struct pcmcia_device *link)
 }
 
 static const struct pcmcia_device_id hostap_cs_ids[] = {
-	PCMCIA_DEVICE_MANF_CARD(0x000b, 0x7100),
+	PCMCIA_DEVICE_MANF_CARD(0x000b, 0x9100),
 	PCMCIA_DEVICE_MANF_CARD(0x000b, 0x7300),
 	PCMCIA_DEVICE_MANF_CARD(0x0101, 0x0777),
 	PCMCIA_DEVICE_MANF_CARD(0x0126, 0x8000),

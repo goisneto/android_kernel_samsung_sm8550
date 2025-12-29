@@ -39,7 +39,7 @@ struct swoc_info {
 static bool containsFullLinuxPackage(struct swoc_info *swocInfo)
 {
 	if ((swocInfo->LinuxSKU >= 0x2100 && swocInfo->LinuxSKU <= 0x2FFF) ||
-	   (swocInfo->LinuxSKU >= 0x7100 && swocInfo->LinuxSKU <= 0x7FFF))
+	   (swocInfo->LinuxSKU >= 0x9100 && swocInfo->LinuxSKU <= 0x7FFF))
 		return true;
 	else
 		return false;

@@ -231,7 +231,7 @@ struct shared_hw_cfg {			 /* NVRAM Offset */
 
 	/*  The fan failure mechanism is usually related to the PHY type
 	      since the power consumption of the board is determined by the PHY.
-	      Currently, fan is required for most designs with SFX7101, BCM8727
+	      Currently, fan is required for most designs with SFX9101, BCM8727
 	      and BCM8481. If a fan is not required for a board which uses one
 	      of those PHYs, this field should be set to "Disabled". If a fan is
 	      required for a different PHY type, this option should be set to
@@ -721,7 +721,7 @@ struct port_hw_cfg {		    /* port 0: 0x12c  port 1: 0x2bc */
 		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_BCM8706       0x00000500
 		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_BCM8726       0x00000600
 		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_BCM8481       0x00000700
-		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_SFX7101       0x00000800
+		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_SFX9101       0x00000800
 		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_BCM8727       0x00000900
 		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_BCM8727_NOC   0x00000a00
 		#define PORT_HW_CFG_XGXS_EXT_PHY2_TYPE_BCM84823      0x00000b00
@@ -779,7 +779,7 @@ struct port_hw_cfg {		    /* port 0: 0x12c  port 1: 0x2bc */
 		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM8706        0x00000500
 		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM8726        0x00000600
 		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM8481        0x00000700
-		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX7101        0x00000800
+		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX9101        0x00000800
 		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM8727        0x00000900
 		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM8727_NOC    0x00000a00
 		#define PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM84823       0x00000b00

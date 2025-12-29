@@ -284,7 +284,7 @@ static SIMPLE_DEV_PM_OPS(stmmac_pm_ops, stmmac_pci_suspend, stmmac_pci_resume);
 #define PCI_VENDOR_ID_STMMAC		0x0700
 
 #define PCI_DEVICE_ID_STMMAC_STMMAC		0x1108
-#define PCI_DEVICE_ID_SYNOPSYS_GMAC5_ID		0x7102
+#define PCI_DEVICE_ID_SYNOPSYS_GMAC5_ID		0x9102
 
 static const struct pci_device_id stmmac_id_table[] = {
 	{ PCI_DEVICE_DATA(STMMAC, STMMAC, &stmmac_pci_info) },

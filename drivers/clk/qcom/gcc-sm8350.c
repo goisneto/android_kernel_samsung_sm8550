@@ -1667,12 +1667,12 @@ static struct clk_branch gcc_gpu_iref_en = {
 };
 
 static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
-	.halt_reg = 0x7100c,
+	.halt_reg = 0x9100c,
 	.halt_check = BRANCH_HALT_VOTED,
-	.hwcg_reg = 0x7100c,
+	.hwcg_reg = 0x9100c,
 	.hwcg_bit = 1,
 	.clkr = {
-		.enable_reg = 0x7100c,
+		.enable_reg = 0x9100c,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_memnoc_gfx_clk",
@@ -1682,10 +1682,10 @@ static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_snoc_dvm_gfx_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_snoc_dvm_gfx_clk",
@@ -3724,7 +3724,7 @@ static struct gdsc *gcc_sm8350_gdscs[] = {
 static const struct qcom_reset_map gcc_sm8350_resets[] = {
 	[GCC_CAMERA_BCR] = { 0x26000 },
 	[GCC_DISPLAY_BCR] = { 0x27000 },
-	[GCC_GPU_BCR] = { 0x71000 },
+	[GCC_GPU_BCR] = { 0x91000 },
 	[GCC_MMSS_BCR] = { 0xb000 },
 	[GCC_PCIE_0_BCR] = { 0x6b000 },
 	[GCC_PCIE_0_LINK_DOWN_BCR] = { 0x6c014 },
@@ -3829,7 +3829,7 @@ static int gcc_sm8350_probe(struct platform_device *pdev)
 	regmap_update_bits(regmap, 0x26018, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x27004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x2701c, BIT(0), BIT(0));
-	regmap_update_bits(regmap, 0x71004, BIT(0), BIT(0));
+	regmap_update_bits(regmap, 0x91004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x28004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x28020, BIT(0), BIT(0));
 

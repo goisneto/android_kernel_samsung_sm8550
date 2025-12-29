@@ -47,7 +47,7 @@
 #define BE_DEVICE_ID1		0x211
 #define BE_DEVICE_ID2		0x221
 #define OC_DEVICE_ID1		0x700	/* Device Id for BE2 cards */
-#define OC_DEVICE_ID2		0x710	/* Device Id for BE3 cards */
+#define OC_DEVICE_ID2		0x910	/* Device Id for BE3 cards */
 #define OC_DEVICE_ID3		0xe220	/* Device id for Lancer cards */
 #define OC_DEVICE_ID4           0xe228   /* Device id for VF in Lancer */
 #define OC_DEVICE_ID5		0x720	/* Device Id for Skyhawk cards */

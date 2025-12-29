@@ -1412,7 +1412,7 @@
 #       define CURR_VID_INDEX_MASK                        (3 << 13)
 #       define CURR_VID_INDEX_SHIFT                       13
 
-#define LOWER_GPIO_ENABLE                                 0x710
+#define LOWER_GPIO_ENABLE                                 0x910
 #define UPPER_GPIO_ENABLE                                 0x714
 #define CTXSW_VID_LOWER_GPIO_CNTL                         0x718
 

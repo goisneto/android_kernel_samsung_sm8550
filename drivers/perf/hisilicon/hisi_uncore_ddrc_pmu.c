@@ -32,7 +32,7 @@
 #define DDRC_INT_MASK		0x6c8
 #define DDRC_INT_STATUS		0x6cc
 #define DDRC_INT_CLEAR		0x6d0
-#define DDRC_VERSION		0x710
+#define DDRC_VERSION		0x910
 
 /* DDRC register definition in v2 */
 #define DDRC_V2_INT_MASK	0x528

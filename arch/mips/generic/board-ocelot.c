@@ -7,7 +7,7 @@
 #include <asm/machine.h>
 #include <asm/prom.h>
 
-#define DEVCPU_GCB_CHIP_REGS_CHIP_ID	0x71070000
+#define DEVCPU_GCB_CHIP_REGS_CHIP_ID	0x91070000
 #define CHIP_ID_PART_ID			GENMASK(27, 12)
 
 #define OCELOT_PART_ID			(0x7514 << 12)

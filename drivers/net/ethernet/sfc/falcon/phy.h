@@ -8,9 +8,9 @@
 #define EF4_PHY_H
 
 /****************************************************************************
- * 10Xpress (SFX7101) PHY
+ * 10Xpress (SFX9101) PHY
  */
-extern const struct ef4_phy_operations falcon_sfx7101_phy_ops;
+extern const struct ef4_phy_operations falcon_sfx9101_phy_ops;
 
 void tenxpress_set_id_led(struct ef4_nic *efx, enum ef4_led_mode mode);
 

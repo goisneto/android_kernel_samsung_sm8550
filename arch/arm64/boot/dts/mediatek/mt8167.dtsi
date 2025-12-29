@@ -31,7 +31,7 @@
 
 		apmixedsys: apmixedsys@10018000 {
 			compatible = "mediatek,mt8167-apmixedsys", "syscon";
-			reg = <0 0x10018000 0 0x710>;
+			reg = <0 0x10018000 0 0x910>;
 			#clock-cells = <1>;
 		};
 

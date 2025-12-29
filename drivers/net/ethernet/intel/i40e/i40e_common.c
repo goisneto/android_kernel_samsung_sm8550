@@ -37,7 +37,7 @@ int i40e_set_mac_type(struct i40e_hw *hw)
 		case I40E_DEV_ID_20G_KR2_A:
 		case I40E_DEV_ID_25G_B:
 		case I40E_DEV_ID_25G_SFP28:
-		case I40E_DEV_ID_X710_N3000:
+		case I40E_DEV_ID_X910_N3000:
 		case I40E_DEV_ID_XXV710_N3000:
 			hw->mac.type = I40E_MAC_XL710;
 			break;
@@ -1180,7 +1180,7 @@ static u32 i40e_led_is_mine(struct i40e_hw *hw, int idx)
 	u32 gpio_val = 0;
 	u32 port;
 
-	if (!I40E_IS_X710TL_DEVICE(hw->device_id) &&
+	if (!I40E_IS_X910TL_DEVICE(hw->device_id) &&
 	    !hw->func_caps.led[idx])
 		return 0;
 	gpio_val = rd32(hw, I40E_GLGEN_GPIO_CTL(idx));
@@ -1264,7 +1264,7 @@ void i40e_led_set(struct i40e_hw *hw, u32 mode, bool blink)
 		if (!gpio_val)
 			continue;
 
-		if (I40E_IS_X710TL_DEVICE(hw->device_id)) {
+		if (I40E_IS_X910TL_DEVICE(hw->device_id)) {
 			u32 pin_func = 0;
 
 			if (mode & I40E_FW_LED)

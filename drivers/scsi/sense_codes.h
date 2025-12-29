@@ -827,7 +827,7 @@ SENSE_CODE(0x6F0A, "Drive-host pairing suspended")
 /*
  *	SENSE_CODE(0x70NN, "Decompression exception short algorithm id of nn")
  */
-SENSE_CODE(0x7100, "Decompression exception long algorithm id")
+SENSE_CODE(0x9100, "Decompression exception long algorithm id")
 
 SENSE_CODE(0x7200, "Session fixation error")
 SENSE_CODE(0x7201, "Session fixation error writing lead-in")

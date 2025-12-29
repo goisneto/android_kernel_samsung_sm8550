@@ -278,7 +278,7 @@ enum iavf_rx_desc_status_bits {
 	IAVF_RX_DESC_STATUS_CRCP_SHIFT		= 4,
 	IAVF_RX_DESC_STATUS_TSYNINDX_SHIFT	= 5, /* 2 BITS */
 	IAVF_RX_DESC_STATUS_TSYNVALID_SHIFT	= 7,
-	/* Note: Bit 8 is reserved in X710 and XL710 */
+	/* Note: Bit 8 is reserved in X910 and XL710 */
 	IAVF_RX_DESC_STATUS_EXT_UDP_0_SHIFT	= 8,
 	IAVF_RX_DESC_STATUS_UMBCAST_SHIFT	= 9, /* 2 BITS */
 	IAVF_RX_DESC_STATUS_FLM_SHIFT		= 11,
@@ -583,7 +583,7 @@ enum iavf_tx_ctx_desc_cmd_bits {
 /* Packet Classifier Types for filters */
 enum iavf_filter_pctype {
 	/* Note: Values 0-28 are reserved for future use.
-	 * Value 29, 30, 32 are not supported on XL710 and X710.
+	 * Value 29, 30, 32 are not supported on XL710 and X910.
 	 */
 	IAVF_FILTER_PCTYPE_NONF_UNICAST_IPV4_UDP	= 29,
 	IAVF_FILTER_PCTYPE_NONF_MULTICAST_IPV4_UDP	= 30,
@@ -594,7 +594,7 @@ enum iavf_filter_pctype {
 	IAVF_FILTER_PCTYPE_NONF_IPV4_OTHER		= 35,
 	IAVF_FILTER_PCTYPE_FRAG_IPV4			= 36,
 	/* Note: Values 37-38 are reserved for future use.
-	 * Value 39, 40, 42 are not supported on XL710 and X710.
+	 * Value 39, 40, 42 are not supported on XL710 and X910.
 	 */
 	IAVF_FILTER_PCTYPE_NONF_UNICAST_IPV6_UDP	= 39,
 	IAVF_FILTER_PCTYPE_NONF_MULTICAST_IPV6_UDP	= 40,

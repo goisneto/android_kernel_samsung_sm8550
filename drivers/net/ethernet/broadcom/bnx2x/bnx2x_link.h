@@ -431,8 +431,8 @@ int bnx2x_common_init_phy(struct bnx2x *bp, u32 shmem_base_path[],
 /* Reset the external PHY using GPIO */
 void bnx2x_ext_phy_hw_reset(struct bnx2x *bp, u8 port);
 
-/* Reset the external of SFX7101 */
-void bnx2x_sfx7101_sp_sw_reset(struct bnx2x *bp, struct bnx2x_phy *phy);
+/* Reset the external of SFX9101 */
+void bnx2x_sfx9101_sp_sw_reset(struct bnx2x *bp, struct bnx2x_phy *phy);
 
 /* Read "byte_cnt" bytes from address "addr" from the SFP+ EEPROM */
 int bnx2x_read_sfp_module_eeprom(struct bnx2x_phy *phy,

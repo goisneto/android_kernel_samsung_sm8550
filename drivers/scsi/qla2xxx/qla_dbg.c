@@ -1191,7 +1191,7 @@ qla24xx_fw_dump(scsi_qla_host_t *vha)
 	qla24xx_read_window(reg, 0xFFF0, 16, fw->rseq_2_reg);
 
 	/* Command DMA registers. */
-	qla24xx_read_window(reg, 0x7100, 16, fw->cmd_dma_reg);
+	qla24xx_read_window(reg, 0x9100, 16, fw->cmd_dma_reg);
 
 	/* Queues. */
 	iter_reg = fw->req0_dma_reg;
@@ -1495,7 +1495,7 @@ qla25xx_fw_dump(scsi_qla_host_t *vha)
 	qla24xx_read_window(reg, 0xB0F0, 16, fw->aseq_2_reg);
 
 	/* Command DMA registers. */
-	qla24xx_read_window(reg, 0x7100, 16, fw->cmd_dma_reg);
+	qla24xx_read_window(reg, 0x9100, 16, fw->cmd_dma_reg);
 
 	/* Queues. */
 	iter_reg = fw->req0_dma_reg;
@@ -1806,7 +1806,7 @@ qla81xx_fw_dump(scsi_qla_host_t *vha)
 	qla24xx_read_window(reg, 0xB0F0, 16, fw->aseq_2_reg);
 
 	/* Command DMA registers. */
-	qla24xx_read_window(reg, 0x7100, 16, fw->cmd_dma_reg);
+	qla24xx_read_window(reg, 0x9100, 16, fw->cmd_dma_reg);
 
 	/* Queues. */
 	iter_reg = fw->req0_dma_reg;
@@ -2170,7 +2170,7 @@ qla83xx_fw_dump(scsi_qla_host_t *vha)
 
 	/* Command DMA registers. */
 	iter_reg = fw->cmd_dma_reg;
-	iter_reg = qla24xx_read_window(reg, 0x7100, 16, iter_reg);
+	iter_reg = qla24xx_read_window(reg, 0x9100, 16, iter_reg);
 	iter_reg = qla24xx_read_window(reg, 0x7120, 16, iter_reg);
 	iter_reg = qla24xx_read_window(reg, 0x7130, 16, iter_reg);
 	qla24xx_read_window(reg, 0x71F0, 16, iter_reg);

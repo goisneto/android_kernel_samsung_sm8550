@@ -495,7 +495,7 @@
 #define PIPECONF_PLANE_OFF		(1 << 19)
 #define PIPECONF_CURSOR_OFF		(1 << 18)
 
-#define PIPEBCONF		0x71008
+#define PIPEBCONF		0x91008
 #define PIPEBCONF_ENABLE		(1 << 31)
 #define PIPEBCONF_DISABLE		0
 #define PIPEBCONF_DOUBLE_WIDE		(1 << 30)
@@ -505,12 +505,12 @@
 
 #define PIPECCONF		0x72008
 
-#define PIPEBGCMAXRED		0x71010
-#define PIPEBGCMAXGREEN		0x71014
-#define PIPEBGCMAXBLUE		0x71018
+#define PIPEBGCMAXRED		0x91010
+#define PIPEBGCMAXGREEN		0x91014
+#define PIPEBGCMAXBLUE		0x91018
 
 #define PIPEASTAT		0x70024
-#define PIPEBSTAT		0x71024
+#define PIPEBSTAT		0x91024
 #define PIPECSTAT		0x72024
 #define PIPE_VBLANK_INTERRUPT_STATUS		(1UL << 1)
 #define PIPE_START_VBLANK_INTERRUPT_STATUS	(1UL << 2)
@@ -552,8 +552,8 @@
 
 #define PIPEAFRAMEHIGH		0x70040
 #define PIPEAFRAMEPIXEL		0x70044
-#define PIPEBFRAMEHIGH		0x71040
-#define PIPEBFRAMEPIXEL		0x71044
+#define PIPEBFRAMEHIGH		0x91040
+#define PIPEBFRAMEPIXEL		0x91044
 #define PIPECFRAMEHIGH		0x72040
 #define PIPECFRAMEPIXEL		0x72044
 #define PIPE_FRAME_HIGH_MASK	0x0000ffff
@@ -1447,7 +1447,7 @@ No status bits are changed.
  */
 
 #define _PIPEA_GMCH_DATA_M			0x70050
-#define _PIPEB_GMCH_DATA_M			0x71050
+#define _PIPEB_GMCH_DATA_M			0x91050
 
 /* Transfer unit size for display port - 1, default is 0x3f (for TU size 64) */
 #define   PIPE_GMCH_DATA_M_TU_SIZE_MASK		(0x3f << 25)
@@ -1456,7 +1456,7 @@ No status bits are changed.
 #define   PIPE_GMCH_DATA_M_MASK			(0xffffff)
 
 #define _PIPEA_GMCH_DATA_N			0x70054
-#define _PIPEB_GMCH_DATA_N			0x71054
+#define _PIPEB_GMCH_DATA_N			0x91054
 #define   PIPE_GMCH_DATA_N_MASK			(0xffffff)
 
 /*
@@ -1471,11 +1471,11 @@ No status bits are changed.
  */
 
 #define _PIPEA_DP_LINK_M				0x70060
-#define _PIPEB_DP_LINK_M				0x71060
+#define _PIPEB_DP_LINK_M				0x91060
 #define   PIPEA_DP_LINK_M_MASK			(0xffffff)
 
 #define _PIPEA_DP_LINK_N				0x70064
-#define _PIPEB_DP_LINK_N				0x71064
+#define _PIPEB_DP_LINK_N				0x91064
 #define   PIPEA_DP_LINK_N_MASK			(0xffffff)
 
 #define PIPE_GMCH_DATA_M(pipe) _PIPE(pipe, _PIPEA_GMCH_DATA_M, _PIPEB_GMCH_DATA_M)

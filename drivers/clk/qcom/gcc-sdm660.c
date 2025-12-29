@@ -1030,10 +1030,10 @@ static struct clk_branch gcc_aggre2_usb3_axi_clk = {
 };
 
 static struct clk_branch gcc_bimc_gfx_clk = {
-	.halt_reg = 0x7106c,
+	.halt_reg = 0x9106c,
 	.halt_check = BRANCH_VOTED,
 	.clkr = {
-		.enable_reg = 0x7106c,
+		.enable_reg = 0x9106c,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_bimc_gfx_clk",
@@ -1568,10 +1568,10 @@ static struct clk_branch gcc_gp3_clk = {
 };
 
 static struct clk_branch gcc_gpu_bimc_gfx_clk = {
-	.halt_reg = 0x71010,
+	.halt_reg = 0x91010,
 	.halt_check = BRANCH_VOTED,
 	.clkr = {
-		.enable_reg = 0x71010,
+		.enable_reg = 0x91010,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_bimc_gfx_clk",
@@ -1581,10 +1581,10 @@ static struct clk_branch gcc_gpu_bimc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_cfg_ahb_clk = {
-	.halt_reg = 0x71004,
+	.halt_reg = 0x91004,
 	.halt_check = BRANCH_VOTED,
 	.clkr = {
-		.enable_reg = 0x71004,
+		.enable_reg = 0x91004,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_cfg_ahb_clk",

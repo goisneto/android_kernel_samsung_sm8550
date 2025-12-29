@@ -658,13 +658,13 @@
 #       define AFMT_AUDIO_INFO_CT(x)         (((x) & 0xf) << 11)
 #       define AFMT_AUDIO_INFO_CHECKSUM_OFFSET(x)   (((x) & 0xff) << 16)
 #       define AFMT_AUDIO_INFO_CXT(x)        (((x) & 0x1f) << 24)
-#define AFMT_AUDIO_INFO1                     0x7100
+#define AFMT_AUDIO_INFO1                     0x9100
 #       define AFMT_AUDIO_INFO_CA(x)         (((x) & 0xff) << 0)
 #       define AFMT_AUDIO_INFO_LSV(x)        (((x) & 0xf) << 11)
 #       define AFMT_AUDIO_INFO_DM_INH(x)     (((x) & 1) << 15)
 #       define AFMT_AUDIO_INFO_DM_INH_LSV(x) (((x) & 0xff) << 8)
 #       define AFMT_AUDIO_INFO_LFEBPL(x)     (((x) & 3) << 16)
-#define AFMT_60958_0                         0x7104
+#define AFMT_60958_0                         0x9104
 #       define AFMT_60958_CS_A(x)            (((x) & 1) << 0)
 #       define AFMT_60958_CS_B(x)            (((x) & 1) << 1)
 #       define AFMT_60958_CS_C(x)            (((x) & 1) << 2)
@@ -675,13 +675,13 @@
 #       define AFMT_60958_CS_CHANNEL_NUMBER_L(x)   (((x) & 0xf) << 20)
 #       define AFMT_60958_CS_SAMPLING_FREQUENCY(x) (((x) & 0xf) << 24)
 #       define AFMT_60958_CS_CLOCK_ACCURACY(x)     (((x) & 3) << 28)
-#define AFMT_60958_1                         0x7108
+#define AFMT_60958_1                         0x9108
 #       define AFMT_60958_CS_WORD_LENGTH(x)  (((x) & 0xf) << 0)
 #       define AFMT_60958_CS_ORIGINAL_SAMPLING_FREQUENCY(x)   (((x) & 0xf) << 4)
 #       define AFMT_60958_CS_VALID_L(x)      (((x) & 1) << 16)
 #       define AFMT_60958_CS_VALID_R(x)      (((x) & 1) << 18)
 #       define AFMT_60958_CS_CHANNEL_NUMBER_R(x)   (((x) & 0xf) << 20)
-#define AFMT_AUDIO_CRC_CONTROL               0x710c
+#define AFMT_AUDIO_CRC_CONTROL               0x910c
 #       define AFMT_AUDIO_CRC_EN             (1 << 0)
 #define AFMT_RAMP_CONTROL0                   0x7110
 #       define AFMT_RAMP_MAX_COUNT(x)        (((x) & 0xffffff) << 0)

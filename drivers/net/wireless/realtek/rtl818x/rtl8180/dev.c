@@ -80,7 +80,7 @@ static const struct pci_device_id rtl8180_table[] = {
 	{ PCI_DEVICE(0x1799, 0x6020) },
 	{ PCI_DEVICE(PCI_VENDOR_ID_DLINK, 0x3300) },
 	{ PCI_DEVICE(0x1186, 0x3301) },
-	{ PCI_DEVICE(0x1432, 0x7106) },
+	{ PCI_DEVICE(0x1432, 0x9106) },
 	{ }
 };
 

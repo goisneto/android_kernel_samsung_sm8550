@@ -392,7 +392,7 @@ void rtl8723e_dm_bt_agc_table(struct ieee80211_hw *hw, u8 type)
 		rtl8723e_phy_set_rf_reg(hw, RF90_PATH_A,
 					RF_RX_AGC_HP, 0xfffff, 0x32000);
 		rtl8723e_phy_set_rf_reg(hw, RF90_PATH_A,
-					RF_RX_AGC_HP, 0xfffff, 0x71000);
+					RF_RX_AGC_HP, 0xfffff, 0x91000);
 		rtl8723e_phy_set_rf_reg(hw, RF90_PATH_A,
 					RF_RX_AGC_HP, 0xfffff, 0xb0000);
 		rtl8723e_phy_set_rf_reg(hw, RF90_PATH_A,

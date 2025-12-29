@@ -11503,7 +11503,7 @@
 
 
 // addressBlock: gc_sdma3_sdma3dec
-// base address: 0x71000
+// base address: 0x91000
 #define mmSDMA3_DEC_START                                                                              0x0400
 #define mmSDMA3_DEC_START_BASE_IDX                                                                     2
 #define mmSDMA3_GLOBAL_TIMESTAMP_LO                                                                    0x040f

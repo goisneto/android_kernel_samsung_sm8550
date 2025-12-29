@@ -1184,7 +1184,7 @@ static inline bool i915_mmio_reg_valid(i915_reg_t reg)
 #define GEN10_NOA_WRITE_HIGH _MMIO(0x9884)
 
 #define _GEN7_PIPEA_DE_LOAD_SL	0x70068
-#define _GEN7_PIPEB_DE_LOAD_SL	0x71068
+#define _GEN7_PIPEB_DE_LOAD_SL	0x91068
 #define GEN7_PIPE_DE_LOAD_SL(pipe) _MMIO_PIPE(pipe, _GEN7_PIPEA_DE_LOAD_SL, _GEN7_PIPEB_DE_LOAD_SL)
 
 /*
@@ -2687,9 +2687,9 @@ static inline bool i915_mmio_reg_valid(i915_reg_t reg)
 #endif
 #define IPEIR_I965	_MMIO(0x2064)
 #define IPEHR_I965	_MMIO(0x2068)
-#define GEN7_SC_INSTDONE	_MMIO(0x7100)
-#define GEN12_SC_INSTDONE_EXTRA		_MMIO(0x7104)
-#define GEN12_SC_INSTDONE_EXTRA2	_MMIO(0x7108)
+#define GEN7_SC_INSTDONE	_MMIO(0x9100)
+#define GEN12_SC_INSTDONE_EXTRA		_MMIO(0x9104)
+#define GEN12_SC_INSTDONE_EXTRA2	_MMIO(0x9108)
 #define GEN7_SAMPLER_INSTDONE	_MMIO(0xe160)
 #define GEN7_ROW_INSTDONE	_MMIO(0xe164)
 #define MCFG_MCR_SELECTOR		_MMIO(0xfd0)
@@ -2954,7 +2954,7 @@ static inline bool i915_mmio_reg_valid(i915_reg_t reg)
 #define MBUS_ABOX_BT_CREDIT_POOL1(x)	((x) << 0)
 
 #define _PIPEA_MBUS_DBOX_CTL		0x7003C
-#define _PIPEB_MBUS_DBOX_CTL		0x7103C
+#define _PIPEB_MBUS_DBOX_CTL		0x9103C
 #define PIPE_MBUS_DBOX_CTL(pipe)	_MMIO_PIPE(pipe, _PIPEA_MBUS_DBOX_CTL, \
 						   _PIPEB_MBUS_DBOX_CTL)
 #define MBUS_DBOX_BW_CREDIT_MASK	(3 << 14)
@@ -6024,7 +6024,7 @@ enum {
  * For our current usage, this is always 3, one byte for R, G and B.
  */
 #define _PIPEA_DATA_M_G4X	0x70050
-#define _PIPEB_DATA_M_G4X	0x71050
+#define _PIPEB_DATA_M_G4X	0x91050
 
 /* Transfer unit size for display port - 1, default is 0x3f (for TU size 64) */
 #define  TU_SIZE(x)             (((x) - 1) << 25) /* default size 64 */
@@ -6035,7 +6035,7 @@ enum {
 #define  DATA_LINK_N_MAX	(0x800000)
 
 #define _PIPEA_DATA_N_G4X	0x70054
-#define _PIPEB_DATA_N_G4X	0x71054
+#define _PIPEB_DATA_N_G4X	0x91054
 #define   PIPE_GMCH_DATA_N_MASK			(0xffffff)
 
 /*
@@ -6050,11 +6050,11 @@ enum {
  */
 
 #define _PIPEA_LINK_M_G4X	0x70060
-#define _PIPEB_LINK_M_G4X	0x71060
+#define _PIPEB_LINK_M_G4X	0x91060
 #define   PIPEA_DP_LINK_M_MASK			(0xffffff)
 
 #define _PIPEA_LINK_N_G4X	0x70064
-#define _PIPEB_LINK_N_G4X	0x71064
+#define _PIPEB_LINK_N_G4X	0x91064
 #define   PIPEA_DP_LINK_N_MASK			(0xffffff)
 
 #define PIPE_DATA_M_G4X(pipe) _MMIO_PIPE(pipe, _PIPEA_DATA_M_G4X, _PIPEB_DATA_M_G4X)
@@ -6177,7 +6177,7 @@ enum {
 #define PIPESTAT_INT_STATUS_MASK		0x0000ffff
 
 #define PIPE_A_OFFSET		0x70000
-#define PIPE_B_OFFSET		0x71000
+#define PIPE_B_OFFSET		0x91000
 #define PIPE_C_OFFSET		0x72000
 #define PIPE_D_OFFSET		0x73000
 #define CHV_PIPE_C_OFFSET	0x74000
@@ -6200,7 +6200,7 @@ enum {
 #define PIPESTAT(pipe)		_MMIO_PIPE2(pipe, _PIPEASTAT)
 
 #define  _PIPEAGCMAX           0x70010
-#define  _PIPEBGCMAX           0x71010
+#define  _PIPEBGCMAX           0x91010
 #define PIPEGCMAX(pipe, i)     _MMIO_PIPE2(pipe, _PIPEAGCMAX + (i) * 4)
 
 #define _PIPE_ARB_CTL_A			0x70028 /* icl+ */
@@ -6208,7 +6208,7 @@ enum {
 #define   PIPE_ARB_USE_PROG_SLOTS	REG_BIT(13)
 
 #define _PIPE_MISC_A			0x70030
-#define _PIPE_MISC_B			0x71030
+#define _PIPE_MISC_B			0x91030
 #define   PIPEMISC_YUV420_ENABLE	(1 << 27) /* glk+ */
 #define   PIPEMISC_YUV420_MODE_FULL_BLEND (1 << 26) /* glk+ */
 #define   PIPEMISC_HDR_MODE_PRECISION	(1 << 23) /* icl+ */
@@ -6231,7 +6231,7 @@ enum {
 #define PIPEMISC(pipe)			_MMIO_PIPE2(pipe, _PIPE_MISC_A)
 
 #define _PIPE_MISC2_A					0x7002C
-#define _PIPE_MISC2_B					0x7102C
+#define _PIPE_MISC2_B					0x9102C
 #define   PIPE_MISC2_BUBBLE_COUNTER_SCALER_EN		(0x50 << 24)
 #define   PIPE_MISC2_BUBBLE_COUNTER_SCALER_DIS		(0x14 << 24)
 #define   PIPE_MISC2_UNDERRUN_BUBBLE_COUNTER_MASK	(0xff << 24)
@@ -6700,9 +6700,9 @@ enum {
 #define _CURBBASE		0x700c4
 #define _CURBPOS		0x700c8
 
-#define _CURBCNTR_IVB		0x71080
-#define _CURBBASE_IVB		0x71084
-#define _CURBPOS_IVB		0x71088
+#define _CURBCNTR_IVB		0x91080
+#define _CURBBASE_IVB		0x91084
+#define _CURBPOS_IVB		0x91088
 
 #define CURCNTR(pipe) _CURSOR2(pipe, _CURACNTR)
 #define CURBASE(pipe) _CURSOR2(pipe, _CURABASE)
@@ -6713,7 +6713,7 @@ enum {
 #define CURSOR_A_OFFSET 0x70080
 #define CURSOR_B_OFFSET 0x700c0
 #define CHV_CURSOR_C_OFFSET 0x700e0
-#define IVB_CURSOR_B_OFFSET 0x71080
+#define IVB_CURSOR_B_OFFSET 0x91080
 #define IVB_CURSOR_C_OFFSET 0x72080
 #define TGL_CURSOR_D_OFFSET 0x73080
 
@@ -6820,13 +6820,13 @@ enum {
 #define SWF_ILK(i)	_MMIO(0x4F000 + (i) * 4)
 
 /* Pipe B */
-#define _PIPEBDSL		(DISPLAY_MMIO_BASE(dev_priv) + 0x71000)
-#define _PIPEBCONF		(DISPLAY_MMIO_BASE(dev_priv) + 0x71008)
-#define _PIPEBSTAT		(DISPLAY_MMIO_BASE(dev_priv) + 0x71024)
-#define _PIPEBFRAMEHIGH		0x71040
-#define _PIPEBFRAMEPIXEL	0x71044
-#define _PIPEB_FRMCOUNT_G4X	(DISPLAY_MMIO_BASE(dev_priv) + 0x71040)
-#define _PIPEB_FLIPCOUNT_G4X	(DISPLAY_MMIO_BASE(dev_priv) + 0x71044)
+#define _PIPEBDSL		(DISPLAY_MMIO_BASE(dev_priv) + 0x91000)
+#define _PIPEBCONF		(DISPLAY_MMIO_BASE(dev_priv) + 0x91008)
+#define _PIPEBSTAT		(DISPLAY_MMIO_BASE(dev_priv) + 0x91024)
+#define _PIPEBFRAMEHIGH		0x91040
+#define _PIPEBFRAMEPIXEL	0x91044
+#define _PIPEB_FRMCOUNT_G4X	(DISPLAY_MMIO_BASE(dev_priv) + 0x91040)
+#define _PIPEB_FLIPCOUNT_G4X	(DISPLAY_MMIO_BASE(dev_priv) + 0x91044)
 
 
 /* Display B control */
@@ -8458,7 +8458,7 @@ enum {
 
 /*GEN11 chicken */
 #define _PIPEA_CHICKEN				0x70038
-#define _PIPEB_CHICKEN				0x71038
+#define _PIPEB_CHICKEN				0x91038
 #define _PIPEC_CHICKEN				0x72038
 #define PIPE_CHICKEN(pipe)			_MMIO_PIPE(pipe, _PIPEA_CHICKEN,\
 							   _PIPEB_CHICKEN)
@@ -8845,7 +8845,7 @@ enum {
 
 #define _HSW_STEREO_3D_CTL_A		0x70020
 #define   S3D_ENABLE			(1 << 31)
-#define _HSW_STEREO_3D_CTL_B		0x71020
+#define _HSW_STEREO_3D_CTL_B		0x91020
 
 #define HSW_STEREO_3D_CTL(trans)	_MMIO_PIPE2(trans, _HSW_STEREO_3D_CTL_A)
 

@@ -523,7 +523,7 @@ static const struct mdp5_cfg_hw msm8x94_config = {
 	},
 	.pp = {
 		.count = 4,
-		.base = { 0x70000, 0x70800, 0x71000, 0x71800 },
+		.base = { 0x70000, 0x70800, 0x91000, 0x71800 },
 	},
 	.intf = {
 		.base = { 0x6a000, 0x6a800, 0x6b000, 0x6b800, 0x6c000 },
@@ -628,7 +628,7 @@ static const struct mdp5_cfg_hw msm8x96_config = {
 	},
 	.pp = {
 		.count = 4,
-		.base = { 0x70000, 0x70800, 0x71000, 0x71800 },
+		.base = { 0x70000, 0x70800, 0x91000, 0x71800 },
 	},
 	.cdm = {
 		.count = 1,
@@ -923,7 +923,7 @@ static const struct mdp5_cfg_hw msm8998_config = {
 	},
 	.pp = {
 		.count = 4,
-		.base = { 0x70000, 0x70800, 0x71000, 0x71800 },
+		.base = { 0x70000, 0x70800, 0x91000, 0x71800 },
 	},
 	.cdm = {
 		.count = 1,
@@ -1021,7 +1021,7 @@ static const struct mdp5_cfg_hw sdm630_config = {
 	},
 	.pp = {
 		.count = 3,
-		.base = { 0x70000, 0x71000, 0x72000 },
+		.base = { 0x70000, 0x91000, 0x72000 },
 	},
 	.cdm = {
 		.count = 1,
@@ -1119,7 +1119,7 @@ static const struct mdp5_cfg_hw sdm660_config = {
 	},
 	.pp = {
 		.count = 5,
-		.base = { 0x70000, 0x70800, 0x71000, 0x71800, 0x72000 },
+		.base = { 0x70000, 0x70800, 0x91000, 0x71800, 0x72000 },
 	},
 	.cdm = {
 		.count = 1,

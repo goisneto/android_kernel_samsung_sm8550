@@ -11445,15 +11445,15 @@ static void bnx2x_54618se_config_loopback(struct bnx2x_phy *phy,
 }
 
 /******************************************************************/
-/*			SFX7101 PHY SECTION			  */
+/*			SFX9101 PHY SECTION			  */
 /******************************************************************/
 static void bnx2x_7101_config_loopback(struct bnx2x_phy *phy,
 				       struct link_params *params)
 {
 	struct bnx2x *bp = params->bp;
-	/* SFX7101_XGXS_TEST1 */
+	/* SFX9101_XGXS_TEST1 */
 	bnx2x_cl45_write(bp, phy,
-			 MDIO_XS_DEVAD, MDIO_XS_SFX7101_XGXS_TEST1, 0x100);
+			 MDIO_XS_DEVAD, MDIO_XS_SFX9101_XGXS_TEST1, 0x100);
 }
 
 static void bnx2x_7101_config_init(struct bnx2x_phy *phy,
@@ -11462,7 +11462,7 @@ static void bnx2x_7101_config_init(struct bnx2x_phy *phy,
 {
 	u16 fw_ver1, fw_ver2, val;
 	struct bnx2x *bp = params->bp;
-	DP(NETIF_MSG_LINK, "Setting the SFX7101 LASI indication\n");
+	DP(NETIF_MSG_LINK, "Setting the SFX9101 LASI indication\n");
 
 	/* Restore normal power mode*/
 	bnx2x_set_gpio(bp, MISC_REGISTERS_GPIO_2,
@@ -11473,7 +11473,7 @@ static void bnx2x_7101_config_init(struct bnx2x_phy *phy,
 
 	bnx2x_cl45_write(bp, phy,
 			 MDIO_PMA_DEVAD, MDIO_PMA_LASI_CTRL, 0x1);
-	DP(NETIF_MSG_LINK, "Setting the SFX7101 LED to blink on traffic\n");
+	DP(NETIF_MSG_LINK, "Setting the SFX9101 LED to blink on traffic\n");
 	bnx2x_cl45_write(bp, phy,
 			 MDIO_PMA_DEVAD, MDIO_PMA_REG_7107_LED_CNTL, (1<<3));
 
@@ -11515,14 +11515,14 @@ static u8 bnx2x_7101_read_status(struct bnx2x_phy *phy,
 	DP(NETIF_MSG_LINK, "10G-base-T PMA status 0x%x->0x%x\n",
 		   val2, val1);
 	link_up = ((val1 & 4) == 4);
-	/* If link is up print the AN outcome of the SFX7101 PHY */
+	/* If link is up print the AN outcome of the SFX9101 PHY */
 	if (link_up) {
 		bnx2x_cl45_read(bp, phy,
 				MDIO_AN_DEVAD, MDIO_AN_REG_MASTER_STATUS,
 				&val2);
 		vars->line_speed = SPEED_10000;
 		vars->duplex = DUPLEX_FULL;
-		DP(NETIF_MSG_LINK, "SFX7101 AN status 0x%x->Master=%x\n",
+		DP(NETIF_MSG_LINK, "SFX9101 AN status 0x%x->Master=%x\n",
 			   val2, (val2 & (1<<14)));
 		bnx2x_ext_phy_10G_an_resolve(bp, phy, vars);
 		bnx2x_ext_phy_resolve_fc(phy, params, vars);
@@ -11548,7 +11548,7 @@ static int bnx2x_7101_format_ver(u32 spirom_ver, u8 *str, u16 *len)
 	return 0;
 }
 
-void bnx2x_sfx7101_sp_sw_reset(struct bnx2x *bp, struct bnx2x_phy *phy)
+void bnx2x_sfx9101_sp_sw_reset(struct bnx2x *bp, struct bnx2x_phy *phy)
 {
 	u16 val, cnt;
 
@@ -11747,7 +11747,7 @@ static const struct bnx2x_phy phy_warpcore = {
 
 
 static const struct bnx2x_phy phy_7101 = {
-	.type		= PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX7101,
+	.type		= PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX9101,
 	.addr		= 0xff,
 	.def_md_devad	= 0,
 	.flags		= FLAGS_FAN_FAILURE_DET_REQ,
@@ -12397,7 +12397,7 @@ static int bnx2x_populate_ext_phy(struct bnx2x *bp,
 		if (phy_type == PORT_HW_CFG_XGXS_EXT_PHY_TYPE_BCM54618SE)
 			phy->flags |= FLAGS_EEE;
 		break;
-	case PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX7101:
+	case PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX9101:
 		*phy = phy_7101;
 		break;
 	case PORT_HW_CFG_XGXS_EXT_PHY_TYPE_FAILURE:

@@ -71,7 +71,7 @@
 #define OV2740_REG_ISP_CTRL00		0x5000
 /* ISP CTRL01 */
 #define OV2740_REG_ISP_CTRL01		0x5001
-/* Customer Addresses: 0x7010 - 0x710F */
+/* Customer Addresses: 0x7010 - 0x910F */
 #define CUSTOMER_USE_OTP_SIZE		0x100
 /* OTP registers from sensor */
 #define OV2740_REG_OTP_CUSTOMER		0x7010

@@ -174,7 +174,7 @@ static bool vfio_pci_nointx(struct pci_dev *pdev)
 	switch (pdev->vendor) {
 	case PCI_VENDOR_ID_INTEL:
 		switch (pdev->device) {
-		/* All i40e (XL710/X710/XXV710) 10/20/25/40GbE NICs */
+		/* All i40e (XL710/X910/XXV710) 10/20/25/40GbE NICs */
 		case 0x1572:
 		case 0x1574:
 		case 0x1580 ... 0x1581:

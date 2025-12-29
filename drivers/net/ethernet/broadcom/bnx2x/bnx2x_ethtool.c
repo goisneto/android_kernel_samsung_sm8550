@@ -1833,7 +1833,7 @@ static int bnx2x_set_eeprom(struct net_device *dev,
 		rc |= bnx2x_link_reset(&bp->link_params,
 				       &bp->link_vars, 0);
 		if (XGXS_EXT_PHY_TYPE(ext_phy_config) ==
-					PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX7101)
+					PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX9101)
 			bnx2x_set_gpio(bp, MISC_REGISTERS_GPIO_0,
 				       MISC_REGISTERS_GPIO_HIGH, port);
 		bnx2x_release_phy_lock(bp);
@@ -1854,7 +1854,7 @@ static int bnx2x_set_eeprom(struct net_device *dev,
 	} else if (eeprom->magic == 0x53985943) {
 		/* 'PHYC' (0x53985943): PHY FW upgrade completed */
 		if (XGXS_EXT_PHY_TYPE(ext_phy_config) ==
-				       PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX7101) {
+				       PORT_HW_CFG_XGXS_EXT_PHY_TYPE_SFX9101) {
 
 			/* DSP Remove Download Mode */
 			bnx2x_set_gpio(bp, MISC_REGISTERS_GPIO_0,
@@ -1862,7 +1862,7 @@ static int bnx2x_set_eeprom(struct net_device *dev,
 
 			bnx2x_acquire_phy_lock(bp);
 
-			bnx2x_sfx7101_sp_sw_reset(bp,
+			bnx2x_sfx9101_sp_sw_reset(bp,
 						&bp->link_params.phy[EXT_PHY1]);
 
 			/* wait 0.5 sec to allow it to run */

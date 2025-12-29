@@ -712,7 +712,7 @@ enum i40e_rx_desc_status_bits {
 	I40E_RX_DESC_STATUS_CRCP_SHIFT		= 4,
 	I40E_RX_DESC_STATUS_TSYNINDX_SHIFT	= 5, /* 2 BITS */
 	I40E_RX_DESC_STATUS_TSYNVALID_SHIFT	= 7,
-	/* Note: Bit 8 is reserved in X710 and XL710 */
+	/* Note: Bit 8 is reserved in X910 and XL710 */
 	I40E_RX_DESC_STATUS_EXT_UDP_0_SHIFT	= 8,
 	I40E_RX_DESC_STATUS_UMBCAST_SHIFT	= 9, /* 2 BITS */
 	I40E_RX_DESC_STATUS_FLM_SHIFT		= 11,
@@ -1048,7 +1048,7 @@ struct i40e_filter_program_desc {
 /* Packet Classifier Types for filters */
 enum i40e_filter_pctype {
 	/* Note: Values 0-28 are reserved for future use.
-	 * Value 29, 30, 32 are not supported on XL710 and X710.
+	 * Value 29, 30, 32 are not supported on XL710 and X910.
 	 */
 	I40E_FILTER_PCTYPE_NONF_UNICAST_IPV4_UDP	= 29,
 	I40E_FILTER_PCTYPE_NONF_MULTICAST_IPV4_UDP	= 30,
@@ -1059,7 +1059,7 @@ enum i40e_filter_pctype {
 	I40E_FILTER_PCTYPE_NONF_IPV4_OTHER		= 35,
 	I40E_FILTER_PCTYPE_FRAG_IPV4			= 36,
 	/* Note: Values 37-38 are reserved for future use.
-	 * Value 39, 40, 42 are not supported on XL710 and X710.
+	 * Value 39, 40, 42 are not supported on XL710 and X910.
 	 */
 	I40E_FILTER_PCTYPE_NONF_UNICAST_IPV6_UDP	= 39,
 	I40E_FILTER_PCTYPE_NONF_MULTICAST_IPV6_UDP	= 40,

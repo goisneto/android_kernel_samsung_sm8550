@@ -5008,7 +5008,7 @@ qla25xx_set_els_cmds_supported(scsi_qla_host_t *vha)
 	els_cmd_map = dma_alloc_coherent(&ha->pdev->dev, ELS_CMD_MAP_SIZE,
 	    &els_cmd_map_dma, GFP_KERNEL);
 	if (!els_cmd_map) {
-		ql_log(ql_log_warn, vha, 0x7101,
+		ql_log(ql_log_warn, vha, 0x9101,
 		    "Failed to allocate RDP els command param.\n");
 		return QLA_MEMORY_ALLOC_FAILED;
 	}

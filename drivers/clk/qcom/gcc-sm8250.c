@@ -2053,10 +2053,10 @@ static struct clk_branch gcc_gpu_iref_en = {
 };
 
 static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
-	.halt_reg = 0x7100c,
+	.halt_reg = 0x9100c,
 	.halt_check = BRANCH_HALT_VOTED,
 	.clkr = {
-		.enable_reg = 0x7100c,
+		.enable_reg = 0x9100c,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_gpu_memnoc_gfx_clk",
@@ -2067,10 +2067,10 @@ static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_snoc_dvm_gfx_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_gpu_snoc_dvm_gfx_clk",
@@ -4317,7 +4317,7 @@ static struct gdsc *gcc_sm8250_gdscs[] = {
 };
 
 static const struct qcom_reset_map gcc_sm8250_resets[] = {
-	[GCC_GPU_BCR] = { 0x71000 },
+	[GCC_GPU_BCR] = { 0x91000 },
 	[GCC_MMSS_BCR] = { 0xb000 },
 	[GCC_NPU_BWMON_BCR] = { 0x73000 },
 	[GCC_NPU_BCR] = { 0x4d000 },
@@ -4427,7 +4427,7 @@ static int gcc_sm8250_probe(struct platform_device *pdev)
 	 * via MISC registers.
 	 */
 	regmap_update_bits(regmap, 0x4d110, 0x3, 0x3);
-	regmap_update_bits(regmap, 0x71028, 0x3, 0x3);
+	regmap_update_bits(regmap, 0x91028, 0x3, 0x3);
 
 	ret = qcom_cc_register_rcg_dfs(regmap, gcc_dfs_clocks,
 				       ARRAY_SIZE(gcc_dfs_clocks));
@@ -4454,7 +4454,7 @@ static int gcc_sm8250_probe(struct platform_device *pdev)
 	regmap_update_bits(regmap, 0x4818c, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb00c, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb044, BIT(0), BIT(0));
-	regmap_update_bits(regmap, 0x71004, BIT(0), BIT(0));
+	regmap_update_bits(regmap, 0x91004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x4d004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x52000, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb004, BIT(0), BIT(0));

@@ -729,7 +729,7 @@
 			status = "disabled";
 			#address-cells = <1>;
 			#size-cells = <1>;
-			ranges = <0x0 0x71000 0x1000>;
+			ranges = <0x0 0x91000 0x1000>;
 		};
 
 		target-module@73000 {			/* 0x4a173000, ap 63 2a.0 */

@@ -7215,7 +7215,7 @@ Theotherbitsarereservedandshouldbezero*/
 
 #define MDIO_XS_DEVAD			0x4
 #define MDIO_XS_PLL_SEQUENCER		0x8000
-#define MDIO_XS_SFX7101_XGXS_TEST1	0xc00a
+#define MDIO_XS_SFX9101_XGXS_TEST1	0xc00a
 
 #define MDIO_XS_8706_REG_BANK_RX0	0x80bc
 #define MDIO_XS_8706_REG_BANK_RX1	0x80cc

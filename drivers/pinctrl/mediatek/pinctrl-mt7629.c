@@ -44,7 +44,7 @@ static const struct mtk_pin_field_calc mt7629_pin_smt_range[] = {
 	PIN_FIELD(33, 48, 0x4100, 0x10, 0, 1),
 	PIN_FIELD(49, 50, 0x5100, 0x10, 0, 1),
 	PIN_FIELD(51, 69, 0x6100, 0x10, 0, 1),
-	PIN_FIELD(70, 78, 0x7100, 0x10, 0, 1),
+	PIN_FIELD(70, 78, 0x9100, 0x10, 0, 1),
 };
 
 static const struct mtk_pin_field_calc mt7629_pin_pullen_range[] = {

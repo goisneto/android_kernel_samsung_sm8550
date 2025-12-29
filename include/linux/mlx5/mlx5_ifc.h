@@ -165,7 +165,7 @@ enum {
 	MLX5_CMD_OP_DESTROY_XRC_SRQ               = 0x706,
 	MLX5_CMD_OP_QUERY_XRC_SRQ                 = 0x707,
 	MLX5_CMD_OP_ARM_XRC_SRQ                   = 0x708,
-	MLX5_CMD_OP_CREATE_DCT                    = 0x710,
+	MLX5_CMD_OP_CREATE_DCT                    = 0x910,
 	MLX5_CMD_OP_DESTROY_DCT                   = 0x711,
 	MLX5_CMD_OP_DRAIN_DCT                     = 0x712,
 	MLX5_CMD_OP_QUERY_DCT                     = 0x713,

@@ -341,7 +341,7 @@
 #define DECON_CMU_MEM_CLKGATE_ENABLE		(0x1 << 0)
 
 /* DECON_UPDATE */
-#define DECON_UPDATE				0x710
+#define DECON_UPDATE				0x910
 
 #define DECON_UPDATE_SLAVE_SYNC			(1 << 4)
 #define DECON_UPDATE_STANDALONE_F		(1 << 0)

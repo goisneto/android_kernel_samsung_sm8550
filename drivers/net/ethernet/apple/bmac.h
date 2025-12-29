@@ -147,7 +147,7 @@
 #define RXCV		0x6e0   /* Receive code violation */
 
 #define BHASH3		0x700   /* multicast hash register */
-#define BHASH2		0x710   /* multicast hash register */
+#define BHASH2		0x910   /* multicast hash register */
 #define BHASH1		0x720   /* multicast hash register */
 #define BHASH0		0x730   /* multicast hash register */
 

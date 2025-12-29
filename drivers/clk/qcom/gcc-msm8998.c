@@ -2047,10 +2047,10 @@ static struct clk_branch gcc_bimc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_bimc_gfx_clk = {
-	.halt_reg = 0x71010,
+	.halt_reg = 0x91010,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71010,
+		.enable_reg = 0x91010,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_bimc_gfx_clk",
@@ -2060,10 +2060,10 @@ static struct clk_branch gcc_gpu_bimc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_bimc_gfx_src_clk = {
-	.halt_reg = 0x7100c,
+	.halt_reg = 0x9100c,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x7100c,
+		.enable_reg = 0x9100c,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_bimc_gfx_src_clk",
@@ -2073,10 +2073,10 @@ static struct clk_branch gcc_gpu_bimc_gfx_src_clk = {
 };
 
 static struct clk_branch gcc_gpu_cfg_ahb_clk = {
-	.halt_reg = 0x71004,
+	.halt_reg = 0x91004,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71004,
+		.enable_reg = 0x91004,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_cfg_ahb_clk",
@@ -2092,10 +2092,10 @@ static struct clk_branch gcc_gpu_cfg_ahb_clk = {
 };
 
 static struct clk_branch gcc_gpu_snoc_dvm_gfx_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_snoc_dvm_gfx_clk",
@@ -3080,7 +3080,7 @@ static const struct qcom_reset_map gcc_msm8998_resets[] = {
 	[GCC_PCIE_PHY_NOCSR_COM_PHY_BCR] = { 0x6f00c },
 	[GCC_PCIE_PHY_CFG_AHB_BCR] = { 0x6f010 },
 	[GCC_PCIE_PHY_COM_BCR] = { 0x6f014 },
-	[GCC_GPU_BCR] = { 0x71000 },
+	[GCC_GPU_BCR] = { 0x91000 },
 	[GCC_SPSS_BCR] = { 0x72000 },
 	[GCC_OBT_ODT_BCR] = { 0x73000 },
 	[GCC_MSS_RESTART] = { 0x79000 },

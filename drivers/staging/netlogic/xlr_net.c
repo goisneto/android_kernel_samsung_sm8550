@@ -707,10 +707,10 @@ static void xlr_sgmii_init(struct xlr_net_priv *priv)
 
 	/* program  GPIO values for serdes init parameters */
 	xlr_nae_wreg(priv->gpio_addr, 0x20, 0x7e6802);
-	xlr_nae_wreg(priv->gpio_addr, 0x10, 0x7104);
+	xlr_nae_wreg(priv->gpio_addr, 0x10, 0x9104);
 
 	xlr_nae_wreg(priv->gpio_addr, 0x22, 0x7e6802);
-	xlr_nae_wreg(priv->gpio_addr, 0x21, 0x7104);
+	xlr_nae_wreg(priv->gpio_addr, 0x21, 0x9104);
 
 	/* enable autoneg - more magic */
 	phy = priv->phy_addr % 4 + 27;

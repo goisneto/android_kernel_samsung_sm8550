@@ -894,7 +894,7 @@ static int smtc_blank(int blank_mode, struct fb_info *info)
 		/* Screen On: HSync: On, VSync : On */
 
 		switch (sfb->chip_id) {
-		case 0x710:
+		case 0x910:
 		case 0x712:
 			smtc_seqw(0x6a, 0x16);
 			smtc_seqw(0x6b, 0x02);
@@ -1261,7 +1261,7 @@ static void sm7xx_set_timing(struct smtcfb_info *sfb)
 static void smtc_set_timing(struct smtcfb_info *sfb)
 {
 	switch (sfb->chip_id) {
-	case 0x710:
+	case 0x910:
 	case 0x712:
 	case 0x720:
 		sm7xx_set_timing(sfb);
@@ -1426,7 +1426,7 @@ static u_long sm7xx_vram_probe(struct smtcfb_info *sfb)
 	u8 vram;
 
 	switch (sfb->chip_id) {
-	case 0x710:
+	case 0x910:
 	case 0x712:
 		/*
 		 * Assume SM712 graphics chip has 4MB VRAM.
@@ -1544,7 +1544,7 @@ static int smtcfb_pci_probe(struct pci_dev *pdev,
 					smem_size / 1048576);
 
 	switch (sfb->chip_id) {
-	case 0x710:
+	case 0x910:
 	case 0x712:
 		sfb->fb->fix.mmio_start = mmio_base + 0x00400000;
 		sfb->fb->fix.mmio_len = 0x00400000;
@@ -1652,12 +1652,12 @@ failed_regions:
 }
 
 /*
- * 0x710 (LynxEM)
+ * 0x910 (LynxEM)
  * 0x712 (LynxEM+)
  * 0x720 (Lynx3DM, Lynx3DM+)
  */
 static const struct pci_device_id smtcfb_pci_table[] = {
-	{ PCI_DEVICE(0x126f, 0x710), },
+	{ PCI_DEVICE(0x126f, 0x910), },
 	{ PCI_DEVICE(0x126f, 0x712), },
 	{ PCI_DEVICE(0x126f, 0x720), },
 	{0,}
@@ -1707,7 +1707,7 @@ static int __maybe_unused smtcfb_pci_resume(struct device *device)
 	/* reinit hardware */
 	sm7xx_init_hw();
 	switch (sfb->chip_id) {
-	case 0x710:
+	case 0x910:
 	case 0x712:
 		/* set MCLK = 14.31818 *  (0x16 / 0x2) */
 		smtc_seqw(0x6a, 0x16);

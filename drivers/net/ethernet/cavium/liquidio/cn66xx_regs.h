@@ -50,7 +50,7 @@
 #define     CN6XXX_PCIE_OTHER_MSG           0x704
 #define     CN6XXX_PCIE_PORT_FORCE_LINK     0x708
 #define     CN6XXX_PCIE_ACK_FREQ            0x70C
-#define     CN6XXX_PCIE_PORT_LINK_CTL       0x710
+#define     CN6XXX_PCIE_PORT_LINK_CTL       0x910
 #define     CN6XXX_PCIE_LANE_SKEW           0x714
 #define     CN6XXX_PCIE_SYM_NUM             0x718
 #define     CN6XXX_PCIE_FLTMSK              0x720

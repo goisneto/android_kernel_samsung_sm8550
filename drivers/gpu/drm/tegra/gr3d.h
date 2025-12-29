@@ -11,7 +11,7 @@
 #define GR3D_QR_ZTAG_ADDR		0x415
 #define GR3D_QR_CTAG_ADDR		0x417
 #define GR3D_QR_CZ_ADDR			0x419
-#define GR3D_TEX_TEX_ADDR(x)		(0x710 + (x))
+#define GR3D_TEX_TEX_ADDR(x)		(0x910 + (x))
 #define GR3D_DW_MEMORY_OUTPUT_ADDRESS	0x904
 #define GR3D_GLOBAL_SURFADDR(x)		(0xe00 + (x))
 #define GR3D_GLOBAL_SPILLSURFADDR	0xe2a

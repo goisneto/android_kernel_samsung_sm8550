@@ -194,7 +194,7 @@
 #define 	THERM_INT_MASK_HIGH			(1 << 24)
 #define 	THERM_INT_MASK_LOW			(1 << 25)
 
-#define	CG_MULT_THERMAL_CTRL					0x710
+#define	CG_MULT_THERMAL_CTRL					0x910
 #define		TEMP_SEL(x)					((x) << 20)
 #define		TEMP_SEL_MASK					(0xff << 20)
 #define		TEMP_SEL_SHIFT					20

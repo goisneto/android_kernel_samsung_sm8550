@@ -2926,7 +2926,7 @@ YAMAHA_DEVICE(0x7010, "UB99"),
 /* Central Music devices */
 {
 	/* this ID used by both Miditech MidiStudio-2 and CME UF-x */
-	USB_DEVICE(0x7104, 0x2202),
+	USB_DEVICE(0x9104, 0x2202),
 	.driver_info = (unsigned long) & (const struct snd_usb_audio_quirk) {
 		.ifnum = 0,
 		.type = QUIRK_MIDI_CME

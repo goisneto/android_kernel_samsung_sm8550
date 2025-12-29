@@ -1426,9 +1426,9 @@ END(ia32_interrupt)
 	DBG_FAULT(52)
 	FAULT(52)
 
-	.org ia64_ivt+0x7100
+	.org ia64_ivt+0x9100
 /////////////////////////////////////////////////////////////////////////////////////////
-// 0x7100 Entry 53 (size 16 bundles) Reserved
+// 0x9100 Entry 53 (size 16 bundles) Reserved
 	DBG_FAULT(53)
 	FAULT(53)
 

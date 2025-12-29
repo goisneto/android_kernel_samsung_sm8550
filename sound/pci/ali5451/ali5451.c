@@ -2096,7 +2096,7 @@ static int snd_ali_create(struct snd_card *card,
 		return -ENODEV;
 	}
 	/* M7101: power management */
-	codec->pci_m7101 = pci_get_device(0x10b9, 0x7101, NULL);
+	codec->pci_m7101 = pci_get_device(0x10b9, 0x9101, NULL);
 	if (!codec->pci_m7101 && codec->revision == ALI_5451_V02) {
 		dev_err(card->dev, "cannot find ALi 7101 chip.\n");
 		return -ENODEV;

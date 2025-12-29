@@ -325,7 +325,7 @@ static int __init ali_find_watchdog(void)
 	pci_dev_put(pdev);
 
 	/* Check for the a 7101 PMU */
-	pdev = pci_get_device(PCI_VENDOR_ID_AL, 0x7101, NULL);
+	pdev = pci_get_device(PCI_VENDOR_ID_AL, 0x9101, NULL);
 	if (pdev == NULL)
 		return -ENODEV;
 

@@ -2324,7 +2324,7 @@ static int init_generic_mmio_info(struct intel_gvt *gvt)
 	MMIO_D(CUR_FBC_CTL(PIPE_C), D_ALL);
 
 	MMIO_D(_MMIO(0x700ac), D_ALL);
-	MMIO_D(_MMIO(0x710ac), D_ALL);
+	MMIO_D(_MMIO(0x910ac), D_ALL);
 	MMIO_D(_MMIO(0x720ac), D_ALL);
 
 	MMIO_D(_MMIO(0x70090), D_ALL);
@@ -3411,7 +3411,7 @@ static int init_skl_mmio_info(struct intel_gvt *gvt)
 	MMIO_D(_MMIO(0x320f0), D_SKL_PLUS);
 
 	MMIO_D(_MMIO(0x70034), D_SKL_PLUS);
-	MMIO_D(_MMIO(0x71034), D_SKL_PLUS);
+	MMIO_D(_MMIO(0x91034), D_SKL_PLUS);
 	MMIO_D(_MMIO(0x72034), D_SKL_PLUS);
 
 	MMIO_D(_MMIO(_PLANE_KEYVAL_1(PIPE_A)), D_SKL_PLUS);

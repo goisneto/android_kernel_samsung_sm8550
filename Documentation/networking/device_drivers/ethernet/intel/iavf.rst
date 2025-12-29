@@ -33,7 +33,7 @@ Identifying Your Adapter
 ========================
 
 The driver in this kernel is compatible with devices based on the following:
- * Intel(R) XL710 X710 Virtual Function
+ * Intel(R) XL710 X910 Virtual Function
  * Intel(R) X722 Virtual Function
  * Intel(R) XXV710 Virtual Function
  * Intel(R) Ethernet Adaptive Virtual Function

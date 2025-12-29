@@ -2485,7 +2485,7 @@ static const struct usb_device_id rt73usb_device_table[] = {
 	/* Samsung */
 	{ USB_DEVICE(0x04e8, 0x4471) },
 	/* Senao */
-	{ USB_DEVICE(0x1740, 0x7100) },
+	{ USB_DEVICE(0x1740, 0x9100) },
 	/* Sitecom */
 	{ USB_DEVICE(0x0df6, 0x0024) },
 	{ USB_DEVICE(0x0df6, 0x0027) },

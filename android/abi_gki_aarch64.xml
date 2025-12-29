@@ -1184,7 +1184,7 @@
       <elf-symbol name='bio_release_pages' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x56512566'/>
       <elf-symbol name='bio_split' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xbae45c0d'/>
       <elf-symbol name='bio_start_io_acct' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x16ac31c9'/>
-      <elf-symbol name='bio_uninit' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x71004257'/>
+      <elf-symbol name='bio_uninit' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x91004257'/>
       <elf-symbol name='bioset_exit' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xe62939a1'/>
       <elf-symbol name='bioset_init' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x8234f8bf'/>
       <elf-symbol name='bit_wait' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x16e297c3'/>
@@ -2890,7 +2890,7 @@
       <elf-symbol name='dump_backtrace' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xa433ce1d'/>
       <elf-symbol name='dump_stack' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x6b2dc060'/>
       <elf-symbol name='dw_handle_msi_irq' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xc641115f'/>
-      <elf-symbol name='dw_pcie_ep_init' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x71044feb'/>
+      <elf-symbol name='dw_pcie_ep_init' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x91044feb'/>
       <elf-symbol name='dw_pcie_find_capability' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x35916809'/>
       <elf-symbol name='dw_pcie_find_ext_capability' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xd6c4af39'/>
       <elf-symbol name='dw_pcie_host_deinit' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x3ddb9773'/>

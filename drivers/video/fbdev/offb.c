@@ -360,7 +360,7 @@ static void offb_init_palette_hacks(struct fb_info *info, struct device_node *dp
 		did = of_get_property(pciparent, "device-id", NULL);
 		/* This will match most R5xx */
 		if (vid && did && *vid == 0x1002 &&
-		    ((*did >= 0x7100 && *did < 0x7800) ||
+		    ((*did >= 0x9100 && *did < 0x7800) ||
 		     (*did >= 0x9400))) {
 			par->cmap_adr = offb_map_reg(pciparent, 2, 0, 0x10000);
 			if (par->cmap_adr)

@@ -1680,8 +1680,8 @@ static int falcon_probe_port(struct ef4_nic *efx)
 	int rc;
 
 	switch (efx->phy_type) {
-	case PHY_TYPE_SFX7101:
-		efx->phy_op = &falcon_sfx7101_phy_ops;
+	case PHY_TYPE_SFX9101:
+		efx->phy_op = &falcon_sfx9101_phy_ops;
 		break;
 	case PHY_TYPE_QT2022C2:
 	case PHY_TYPE_QT2025C:

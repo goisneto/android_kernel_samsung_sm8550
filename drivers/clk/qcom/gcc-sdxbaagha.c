@@ -396,7 +396,7 @@ static const struct freq_tbl ftbl_gcc_emac0_phy_aux_clk_src[] = {
 };
 
 static struct clk_rcg2 gcc_emac0_phy_aux_clk_src = {
-	.cmd_rcgr = 0x7102c,
+	.cmd_rcgr = 0x9102c,
 	.mnd_width = 0,
 	.hid_width = 5,
 	.parent_map = gcc_parent_map_5,
@@ -425,7 +425,7 @@ static const struct freq_tbl ftbl_gcc_emac0_ptp_clk_src[] = {
 };
 
 static struct clk_rcg2 gcc_emac0_ptp_clk_src = {
-	.cmd_rcgr = 0x71064,
+	.cmd_rcgr = 0x91064,
 	.mnd_width = 16,
 	.hid_width = 5,
 	.parent_map = gcc_parent_map_3,
@@ -458,7 +458,7 @@ static const struct freq_tbl ftbl_gcc_emac0_rgmii_clk_src[] = {
 };
 
 static struct clk_rcg2 gcc_emac0_rgmii_clk_src = {
-	.cmd_rcgr = 0x7104c,
+	.cmd_rcgr = 0x9104c,
 	.mnd_width = 16,
 	.hid_width = 5,
 	.parent_map = gcc_parent_map_3,
@@ -938,12 +938,12 @@ static struct clk_branch gcc_cpuss_ahb_clk = {
 };
 
 static struct clk_branch gcc_emac0_axi_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT_VOTED,
-	.hwcg_reg = 0x71018,
+	.hwcg_reg = 0x91018,
 	.hwcg_bit = 1,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_emac0_axi_clk",
@@ -953,10 +953,10 @@ static struct clk_branch gcc_emac0_axi_clk = {
 };
 
 static struct clk_branch gcc_emac0_phy_aux_clk = {
-	.halt_reg = 0x71028,
+	.halt_reg = 0x91028,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71028,
+		.enable_reg = 0x91028,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_emac0_phy_aux_clk",
@@ -971,10 +971,10 @@ static struct clk_branch gcc_emac0_phy_aux_clk = {
 };
 
 static struct clk_branch gcc_emac0_ptp_clk = {
-	.halt_reg = 0x71044,
+	.halt_reg = 0x91044,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71044,
+		.enable_reg = 0x91044,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_emac0_ptp_clk",
@@ -989,10 +989,10 @@ static struct clk_branch gcc_emac0_ptp_clk = {
 };
 
 static struct clk_branch gcc_emac0_rgmii_clk = {
-	.halt_reg = 0x71048,
+	.halt_reg = 0x91048,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71048,
+		.enable_reg = 0x91048,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_emac0_rgmii_clk",
@@ -1007,12 +1007,12 @@ static struct clk_branch gcc_emac0_rgmii_clk = {
 };
 
 static struct clk_branch gcc_emac0_slv_ahb_clk = {
-	.halt_reg = 0x71024,
+	.halt_reg = 0x91024,
 	.halt_check = BRANCH_HALT_VOTED,
-	.hwcg_reg = 0x71024,
+	.hwcg_reg = 0x91024,
 	.hwcg_bit = 1,
 	.clkr = {
-		.enable_reg = 0x71024,
+		.enable_reg = 0x91024,
 		.enable_mask = BIT(0),
 		.hw.init = &(const struct clk_init_data){
 			.name = "gcc_emac0_slv_ahb_clk",
@@ -1674,7 +1674,7 @@ static struct clk_regmap *gcc_sdxbaagha_clocks[] = {
 };
 
 static const struct qcom_reset_map gcc_sdxbaagha_resets[] = {
-	[GCC_EMAC0_BCR] = { 0x71000 },
+	[GCC_EMAC0_BCR] = { 0x91000 },
 	[GCC_PCIE_BCR] = { 0x53000 },
 	[GCC_PCIE_LINK_DOWN_BCR] = { 0x87000 },
 	[GCC_PCIE_NOCSR_COM_PHY_BCR] = { 0x88008 },

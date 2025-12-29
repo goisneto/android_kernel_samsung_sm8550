@@ -97,7 +97,7 @@
 
 		gpio: pinctrl@71010038 {
 			compatible = "mscc,jaguar2-pinctrl";
-			reg = <0x71010038 0x90>;
+			reg = <0x91010038 0x90>;
 			gpio-controller;
 			#gpio-cells = <2>;
 			gpio-ranges = <&gpio 0 0 64>;

@@ -1975,10 +1975,10 @@ static struct clk_branch gcc_gpu_iref_clk = {
 };
 
 static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
-	.halt_reg = 0x7100c,
+	.halt_reg = 0x9100c,
 	.halt_check = BRANCH_VOTED,
 	.clkr = {
-		.enable_reg = 0x7100c,
+		.enable_reg = 0x9100c,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_memnoc_gfx_clk",
@@ -1988,10 +1988,10 @@ static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_snoc_dvm_gfx_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_snoc_dvm_gfx_clk",
@@ -4207,7 +4207,7 @@ static int gcc_sdm845_probe(struct platform_device *pdev)
 
 	/* Disable the GPLL0 active input to MMSS and GPU via MISC registers */
 	regmap_update_bits(regmap, 0x09ffc, 0x3, 0x3);
-	regmap_update_bits(regmap, 0x71028, 0x3, 0x3);
+	regmap_update_bits(regmap, 0x91028, 0x3, 0x3);
 
 	/* Keep critical clocks gcc_camera_ahb_clk, gcc_camera_xo_clk,
 	 * gcc_disp_ahb_clk, gcc_disp_xo_clk, gcc_gpu_cfg_ahb_clk,
@@ -4219,7 +4219,7 @@ static int gcc_sdm845_probe(struct platform_device *pdev)
 	regmap_update_bits(regmap, 0xb02c, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb00c, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb030, BIT(0), BIT(0));
-	regmap_update_bits(regmap, 0x71004, BIT(0), BIT(0));
+	regmap_update_bits(regmap, 0x91004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb028, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x48190, BIT(0), BIT(0));

@@ -115,7 +115,7 @@ struct usb338x_ll_regs {
 	u32   ll_ltssm_ctrl3;
 	u32   unused1;
 
-	/* 0x710 */
+	/* 0x910 */
 	u32   unused2;
 	u32   ll_general_ctrl0;
 	u32   ll_general_ctrl1;

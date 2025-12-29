@@ -1700,12 +1700,12 @@ static struct clk_branch gcc_gpu_iref_en = {
 };
 
 static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
-	.halt_reg = 0x7100c,
+	.halt_reg = 0x9100c,
 	.halt_check = BRANCH_HALT_VOTED,
-	.hwcg_reg = 0x7100c,
+	.hwcg_reg = 0x9100c,
 	.hwcg_bit = 1,
 	.clkr = {
-		.enable_reg = 0x7100c,
+		.enable_reg = 0x9100c,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_memnoc_gfx_clk",
@@ -1715,10 +1715,10 @@ static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
 };
 
 static struct clk_branch gcc_gpu_snoc_dvm_gfx_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_snoc_dvm_gfx_clk",
@@ -3570,8 +3570,8 @@ static int gcc_sc7280_probe(struct platform_device *pdev)
 	regmap_update_bits(regmap, 0x2701C, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x28004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x28014, BIT(0), BIT(0));
-	regmap_update_bits(regmap, 0x71004, BIT(0), BIT(0));
-	regmap_update_bits(regmap, 0x7100C, BIT(13), BIT(13));
+	regmap_update_bits(regmap, 0x91004, BIT(0), BIT(0));
+	regmap_update_bits(regmap, 0x9100C, BIT(13), BIT(13));
 
 	/* FORCE_MEM_CORE_ON for ufs phy ice core clocks */
 	qcom_branch_set_force_mem_core(regmap, gcc_ufs_phy_ice_core_clk, true);

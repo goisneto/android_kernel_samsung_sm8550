@@ -277,11 +277,11 @@
 #define DVOC_SRCDIM		0x61164
 
 #define PIPEA_DSL		0x70000
-#define PIPEB_DSL		0x71000
+#define PIPEB_DSL		0x91000
 #define PIPEACONF		0x70008
-#define PIPEBCONF		0x71008
+#define PIPEBCONF		0x91008
 #define PIPEASTAT		0x70024 /* bits 0-15 are "write 1 to clear" */
-#define PIPEBSTAT		0x71024
+#define PIPEBSTAT		0x91024
 
 #define PIPECONF_ENABLE			(1 << 31)
 #define PIPECONF_DISABLE		0

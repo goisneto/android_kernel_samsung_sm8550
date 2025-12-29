@@ -31,7 +31,7 @@ Identifying Your Adapter
 ========================
 The driver is compatible with devices based on the following:
 
- * Intel(R) Ethernet Controller X710
+ * Intel(R) Ethernet Controller X910
  * Intel(R) Ethernet Controller XL710
  * Intel(R) Ethernet Network Connection X722
  * Intel(R) Ethernet Controller XXV710
@@ -501,7 +501,7 @@ the HW offloading features.
 
 Multiple Functions per Port
 ---------------------------
-Some adapters based on the Intel Ethernet Controller X710/XL710 support
+Some adapters based on the Intel Ethernet Controller X910/XL710 support
 multiple functions on a single physical port. Configure these functions through
 the System Setup/BIOS.
 
@@ -523,7 +523,7 @@ of a port's bandwidth (should it be available). The sum of all the values for
 Maximum Bandwidth is not restricted, because no more than 100% of a port's
 bandwidth can ever be used.
 
-NOTE: X710/XXV710 devices fail to enable Max VFs (64) when Multiple Functions
+NOTE: X910/XXV710 devices fail to enable Max VFs (64) when Multiple Functions
 per Port (MFP) and SR-IOV are enabled. An error from i40e is logged that says
 "add vsi failed for VF N, aq_err 16". To workaround the issue, enable less than
 64 virtual functions (VFs).

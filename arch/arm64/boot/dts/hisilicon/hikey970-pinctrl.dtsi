@@ -159,7 +159,7 @@
 
 			spi2_pmx_func: spi2_pmx_func {
 				pinctrl-single,pins = <
-					0x710 MUX_M1 /* SPI2_CLK */
+					0x910 MUX_M1 /* SPI2_CLK */
 					0x714 MUX_M1 /* SPI2_DI */
 					0x718 MUX_M1 /* SPI2_DO */
 					0x71c MUX_M1 /* SPI2_CS0_N */
@@ -799,7 +799,7 @@
 
 			spi2_clk_cfg_func: spi2_clk_cfg_func {
 				pinctrl-single,pins = <
-					0x710 0x0 /* SPI2_CLK */
+					0x910 0x0 /* SPI2_CLK */
 				>;
 				pinctrl-single,bias-pulldown = <
 					PULL_DIS

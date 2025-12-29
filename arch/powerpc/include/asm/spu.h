@@ -567,8 +567,8 @@ struct spu_priv1 {
 
 	/* Replacement Management Table (RMT) Area */
 	u64 rmt_index_RW;					/* 0x700 */
-	u8  pad_0x708_0x710[0x8];				/* 0x708 */
-	u64 rmt_data1_RW;					/* 0x710 */
+	u8  pad_0x708_0x910[0x8];				/* 0x708 */
+	u64 rmt_data1_RW;					/* 0x910 */
 	u8  pad_0x718_0x800[0x800 - 0x718];			/* 0x718 */
 
 	/* Control/Configuration Registers */

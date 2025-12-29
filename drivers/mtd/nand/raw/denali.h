@@ -267,7 +267,7 @@
 #define DMA_ENABLE				0x700
 #define     DMA_ENABLE__FLAG				BIT(0)
 
-#define IGNORE_ECC_DONE				0x710
+#define IGNORE_ECC_DONE				0x910
 #define     IGNORE_ECC_DONE__FLAG			BIT(0)
 
 #define DMA_INTR				0x720

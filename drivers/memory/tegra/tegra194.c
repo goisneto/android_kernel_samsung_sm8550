@@ -1136,7 +1136,7 @@ static const struct tegra_mc_client tegra194_mc_clients[] = {
 		.sid = TEGRA194_SID_PCIE5,
 		.regs = {
 			.sid = {
-				.override = 0x710,
+				.override = 0x910,
 				.security = 0x714,
 			},
 		},

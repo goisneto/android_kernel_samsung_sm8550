@@ -210,7 +210,7 @@
 
 	partition@7100000 {
 		label = "mini firmware";
-		reg = <0x7100000 0xa00000>;
+		reg = <0x9100000 0xa00000>;
 	};
 
 	partition@7b00000 {

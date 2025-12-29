@@ -1994,10 +1994,10 @@ static struct clk_branch gcc_gpu_iref_clk = {
 
 /* CLK_DONT_HOLD_STATE flag is needed due to sync_state */
 static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
-	.halt_reg = 0x7100c,
+	.halt_reg = 0x9100c,
 	.halt_check = BRANCH_VOTED,
 	.clkr = {
-		.enable_reg = 0x7100c,
+		.enable_reg = 0x9100c,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_memnoc_gfx_clk",
@@ -2009,10 +2009,10 @@ static struct clk_branch gcc_gpu_memnoc_gfx_clk = {
 
 /* CLK_DONT_HOLD_STATE flag is needed due to sync_state */
 static struct clk_branch gcc_gpu_snoc_dvm_gfx_clk = {
-	.halt_reg = 0x71018,
+	.halt_reg = 0x91018,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
-		.enable_reg = 0x71018,
+		.enable_reg = 0x91018,
 		.enable_mask = BIT(0),
 		.hw.init = &(struct clk_init_data){
 			.name = "gcc_gpu_snoc_dvm_gfx_clk",
@@ -3761,14 +3761,14 @@ static struct gdsc usb30_sec_gdsc = {
 
 static struct critical_clk_offset critical_clk_list[] = {
 	{ .offset = 0x4d110, .mask = BIT(1) | BIT(0) },
-	{ .offset = 0x71028, .mask = BIT(1) | BIT(0) },
+	{ .offset = 0x91028, .mask = BIT(1) | BIT(0) },
 	{ .offset = 0xb008,  .mask = BIT(0) },
 	{ .offset = 0xb044,  .mask = BIT(0) },
 	{ .offset = 0x48190, .mask = BIT(0) },
 	{ .offset = 0x52004, .mask =  BIT(22) },
 	{ .offset = 0xb00c,  .mask = BIT(0) },
 	{ .offset = 0xb048,  .mask = BIT(0) },
-	{ .offset = 0x71004, .mask = BIT(0) },
+	{ .offset = 0x91004, .mask = BIT(0) },
 	{ .offset = 0x4d004, .mask = BIT(0) },
 	{ .offset = 0xb004,  .mask = BIT(0) },
 	{ .offset = 0xb040,  .mask = BIT(0) },
@@ -3981,7 +3981,7 @@ static struct clk_regmap *gcc_sm8150_clocks[] = {
 
 static const struct qcom_reset_map gcc_sm8150_resets[] = {
 	[GCC_EMAC_BCR] = { 0x6000 },
-	[GCC_GPU_BCR] = { 0x71000 },
+	[GCC_GPU_BCR] = { 0x91000 },
 	[GCC_MMSS_BCR] = { 0xb000 },
 	[GCC_NPU_BCR] = { 0x4d000 },
 	[GCC_PCIE_0_BCR] = { 0x6b000 },
@@ -4085,7 +4085,7 @@ static int gcc_sm8150_probe(struct platform_device *pdev)
 
 	/* Disable the GPLL0 active input to NPU and GPU via MISC registers */
 	regmap_update_bits(regmap, 0x4d110, 0x3, 0x3);
-	regmap_update_bits(regmap, 0x71028, 0x3, 0x3);
+	regmap_update_bits(regmap, 0x91028, 0x3, 0x3);
 
 	/*
 	 * Keep clocks always enabled:
@@ -4100,7 +4100,7 @@ static int gcc_sm8150_probe(struct platform_device *pdev)
 	regmap_update_bits(regmap, 0x52004, BIT(22), BIT(22));
 	regmap_update_bits(regmap, 0xb00c, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb048, BIT(0), BIT(0));
-	regmap_update_bits(regmap, 0x71004, BIT(0), BIT(0));
+	regmap_update_bits(regmap, 0x91004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0x4d004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb004, BIT(0), BIT(0));
 	regmap_update_bits(regmap, 0xb040, BIT(0), BIT(0));
